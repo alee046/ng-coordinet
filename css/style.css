@@ -1,7 +1,18 @@
 body{
-  background:#127690;
+  background: #127690;
 }
-#map-canvas  { height: 75%; width:100%; }
+
+html,
+body,
+.container {
+  min-height: 100%;
+}
+
+.angular-google-map-container {
+  height: 500px;
+  width:  100%;
+}
+
 #user-number { font-size: 15px; font-weight: bold; font-color:black;}
 #chatbox{
   border-color:solid;
