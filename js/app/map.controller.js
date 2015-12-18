@@ -5,9 +5,9 @@
     .module("app")
     .controller("MapController", MapController);
 
-  MapController.$inject = ["$scope", "uiGmapGoogleMapApi", "usersDataService", "geolocateService"];
+  MapController.$inject = ["$log", "$scope", "uiGmapGoogleMapApi", "usersDataService", "geolocateService", "socketService"];
 
-  function MapController($scope, uiGmapGoogleMapApi, usersDataService, geolocateService) {
+  function MapController($log, $scope, uiGmapGoogleMapApi, usersDataService, geolocateService, socketService) {
     var vm = this;
 
     vm.users = usersDataService;
@@ -22,7 +22,15 @@
       };
 
       $scope.map.zoom = 14;
+
+      socketService.emit('location', vm.users.current);
     })
+
+    $scope.$on("socket:location", function(evt, data) {
+      $log.log("User located!", evt, data);
+
+      // $scope.map.markers
+    });
 
     $scope.map = {
       center: {

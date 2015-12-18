@@ -4,7 +4,9 @@
   angular
     .module("app", [
       "uiGmapgoogle-maps",
-      "ui.router"
-    ]);
+      "ui.router",
+      "btford.socket-io"
+    ])
+    .constant("io", window.io);
 
 })();
