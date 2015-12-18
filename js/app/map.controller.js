@@ -3,14 +3,12 @@
 
   angular
     .module("app")
-    .controller("MainController", MainController);
+    .controller("MapController", MapController);
 
-  MainController.$inject = ["$scope", "uiGmapGoogleMapApi"];
+  MapController.$inject = ["$scope", "uiGmapGoogleMapApi"];
 
-  function MainController($scope, uiGmapGoogleMapApi) {
+  function MapController($scope, uiGmapGoogleMapApi) {
     var vm = this;
-
-    vm.test = "This should show up.";
 
     $scope.map = {
       center: {
