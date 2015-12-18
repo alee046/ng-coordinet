@@ -13,6 +13,10 @@ body,
   width:  100%;
 }
 
+.center {
+  text-align: center;
+}
+
 #user-number { font-size: 15px; font-weight: bold; font-color:black;}
 #chatbox{
   border-color:solid;
